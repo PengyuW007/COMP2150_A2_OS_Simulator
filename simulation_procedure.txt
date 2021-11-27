@@ -1,0 +1,104 @@
+
+
+Queues :
+
+1. QuCPUToDo:           Events that waits for CPU
+2. QuCPUDone:           Events that free CPU resource and wait for future actions
+3. QuIOToDo:            Events that waits for IO
+4. QuIODone:            Events that free IO Resource and wait for future actions
+5. QuArrival:           Arrival Events
+6. QuExit:          Finished processes 
+
+Variables:
+
+1. argFile:             argv[1] of main, the file that contains input parameters
+2. MaxCPUPerSeg:        Max CPU time a progress can use each time
+3. ProgressOnCPU:       Current progress on cpu
+4. ProgressOnIO:        Current progress on io device
+
+Schedule Progress:
+
+1. Read `MaxCPUPerSeg` from first line of `argFile`
+2. Read first Arrival Event from second line of `argFile`
+
+3. Schedule loop
+for (tick=1; ; tick++) {
+
+    if ( All queues are empty && No progress on CPU/IO ) {
+        break; 
+    }
+
+    if ( QuArrival && It's time for this ArrivalEvent  to schedule) {
+        push the Arrival Event into QuCPUToDo
+    }
+
+    if ( ProgressOnCPU != null) {
+        ProgressOnCPU.timeConsumed += 1
+        if (ProgressOnCPU.timeConsumed == ProgressOnCPU.timeNeed) {
+            put CompleteCPU Event into QuCPUDone
+            ProgressOnCPU := nill
+        }
+        else if (ProgressOnCPU.timeConsumed == MaxCPUPerSeg) {
+            put CompleteCPU Event into QuCPUToDo ( set ProgressOnCPU.timeNeed = ProgressOnCPU.timeNeed - MaxCPUPerSeg)
+            ProgressOnCPU := nill
+        }
+    }
+
+    if ( ProgressOnIO != null) {
+        ProgressOnIO.timeConsumed += 1
+        if (ProgressOnIO.timeConsumed == ProgressOnIO.timeNeed) {
+            put CompleteIO Event into QuIODone
+            ProgressOnIO := nill
+        }
+    }
+
+
+    if ( QuCPUDone ) {
+        event := head of QuCPUDone
+        if ( event == CompleteCPU ) {
+            switch event.next {
+            case StartIO:
+                put event into QuIOToDo;
+            case Exit:
+                put event into QuExit;
+            default:
+                error( "unexpected event")
+            }
+        if ( event == TimeOut ) {
+            put event into QuCPUToDo;
+        }
+
+    }
+
+    if ( QuIODone ) {
+        switch head of QuIODone {
+        case StartCPU:
+            put event into QuCPUToDo;
+        case Exit:
+            put event into QuExit;
+        default:
+            error( "unexpected event")
+    }
+
+    if ( ProgressOnCPU == null && QuCPUToDo ) {
+        ProgressOnCPU := QuCPUToDo.dequeue
+    }
+
+    if ( ProgressOnIO == null && QuIOToDo ) {
+        ProgressOnIO := QuIODo.dequeue
+    }
+
+    for () {
+        if ( QuExit ) {
+            process  QuExit.dequeue
+        } else {
+            break
+        }
+    }
+}
+
+4. simulation.summary()
+
+
+
+
