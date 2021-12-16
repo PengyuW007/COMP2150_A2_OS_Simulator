@@ -1,8 +1,8 @@
 #pragma once
-
+#include <string>
+#include <sstream>
 #include <fstream>
 using namespace std;
-
 
 class Simulation {
 private:
