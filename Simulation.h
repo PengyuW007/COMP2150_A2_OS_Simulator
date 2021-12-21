@@ -1,7 +1,9 @@
 #pragma once
+#include <iostream>
 #include <string>
 #include <sstream>
 #include <fstream>
+#include <vector>
 using namespace std;
 
 class Simulation {
@@ -10,6 +12,8 @@ private:
         // including: Queues for CPU and IO, and priority queues for Events 	
 public:
 	Simulation();
+
+    ~Simulation();
 
 	// runSimulation -- start the simulation with the given filename.
 	// Called by main.
