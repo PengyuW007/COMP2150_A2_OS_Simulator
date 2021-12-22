@@ -13,6 +13,7 @@ void Simulation::runSimulation(char *fileName) {
 
     string line;
 
+
     getline(inFile, line);
     int maxCPU = atoi(line.c_str());
     cout << "Max CPU time: " << maxCPU << endl;

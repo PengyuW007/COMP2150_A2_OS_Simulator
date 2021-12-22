@@ -80,6 +80,15 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/1- UMLearn/COMP/COMP 2150/COMP2150A/Assignments/A2/A2B/1.txt">
+			<Option target="A2B"/>
+		</Unit>
+		<Unit filename="D:/1- UMLearn/COMP/COMP 2150/COMP2150A/Assignments/A2/A2B/Simulation.cpp">
+			<Option target="A2B"/>
+		</Unit>
+		<Unit filename="D:/1- UMLearn/COMP/COMP 2150/COMP2150A/Assignments/A2/A2B/Simulation.h">
+			<Option target="A2B"/>
+		</Unit>
 		<Unit filename="D:/1- UMLearn/COMP/COMP 2150/COMP2150A/Assignments/A2/A2B/main.cpp">
 			<Option target="A2B"/>
 		</Unit>

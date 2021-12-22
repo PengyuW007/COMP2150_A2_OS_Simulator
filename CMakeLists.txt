@@ -3,4 +3,4 @@ project(A2B)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(A2B main.cpp)
+add_executable(A2B main.cpp 1.txt Simulation.cpp)

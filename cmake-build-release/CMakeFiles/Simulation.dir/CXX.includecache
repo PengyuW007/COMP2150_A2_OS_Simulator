@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/1- UMLearn/COMP/COMP 2150/COMP2150A/Assignments/A2/A2B/Simulation.cpp
+Simulation.h
+D:/1- UMLearn/COMP/COMP 2150/COMP2150A/Assignments/A2/A2B/Simulation.h
+
+D:/1- UMLearn/COMP/COMP 2150/COMP2150A/Assignments/A2/A2B/Simulation.h
+iostream
+-
+string
+-
+sstream
+-
+fstream
+-
+vector
+-
+

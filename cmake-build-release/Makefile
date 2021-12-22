@@ -128,6 +128,30 @@ A2B/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\A2B.dir\build.make CMakeFiles/A2B.dir/build
 .PHONY : A2B/fast
 
+Simulation.obj: Simulation.cpp.obj
+.PHONY : Simulation.obj
+
+# target to build an object file
+Simulation.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\A2B.dir\build.make CMakeFiles/A2B.dir/Simulation.cpp.obj
+.PHONY : Simulation.cpp.obj
+
+Simulation.i: Simulation.cpp.i
+.PHONY : Simulation.i
+
+# target to preprocess a source file
+Simulation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\A2B.dir\build.make CMakeFiles/A2B.dir/Simulation.cpp.i
+.PHONY : Simulation.cpp.i
+
+Simulation.s: Simulation.cpp.s
+.PHONY : Simulation.s
+
+# target to generate assembly for a file
+Simulation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\A2B.dir\build.make CMakeFiles/A2B.dir/Simulation.cpp.s
+.PHONY : Simulation.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -161,6 +185,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... A2B
+	@echo ... Simulation.obj
+	@echo ... Simulation.i
+	@echo ... Simulation.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

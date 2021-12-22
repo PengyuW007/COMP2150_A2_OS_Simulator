@@ -1,1 +1,4 @@
-Toolchains are not configured Configure Disable profile
+"D:\Apps\CLion\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" "D:\1- UMLearn\COMP\COMP 2150\COMP2150A\Assignments\A2\A2B"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/1- UMLearn/COMP/COMP 2150/COMP2150A/Assignments/A2/A2B/cmake-build-debug
