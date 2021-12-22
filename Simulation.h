@@ -4,12 +4,16 @@
 #include <sstream>
 #include <fstream>
 #include <vector>
+#include <cmath>
+
 using namespace std;
 
 class Simulation {
 private:
 	// you will need to add fields
-        // including: Queues for CPU and IO, and priority queues for Events 	
+        // including: Queues for CPU and IO, and priority queues for Events
+        int id;
+
 public:
 	Simulation();
 
