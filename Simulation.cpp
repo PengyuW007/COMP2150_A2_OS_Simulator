@@ -58,5 +58,9 @@ void Simulation::runSimulation(char *fileName) {
     }
 
     inFile.close();
+}//end runSimulation
+
+void Simulation::summary() {
+
 }
 
